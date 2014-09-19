@@ -9,5 +9,5 @@
     %ul
       -Product.all.each do |product|
         %li= link_to product.name, product_path(product) 
-        %p= "Description: " + product.description 
-        %p= "Price: " + number_to_currency(product.price, precision: 2)
+        %p= Product.human_attribute_name(:description) + " " + product.description 
+        %p= Product.human_attribute_name(:price) + number_to_currency(product.price, precision: 2)
